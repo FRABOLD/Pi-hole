@@ -1,3 +1,3 @@
 # Pi-hole
-mix of most famous pi-hole blocklists /n
+mix of most famous pi-hole blocklists,
 links used can be found in lists.py
