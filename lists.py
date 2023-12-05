@@ -2,8 +2,6 @@
 
 import requests
 
-# Inserisci le tue URL e le relative categorie in questa lista di tuple
-# (URL, Categoria)
 urls_and_categories = [
     ("https://raw.githubusercontent.com/DandelionSprout/adfilt/master/Alternate%20versions%20Anti-Malware%20List/AntiMalwareHosts.txt", "malicious"),
     ("https://osint.digitalside.it/Threat-Intel/lists/latestdomains.txt", "malicious"),
@@ -57,7 +55,6 @@ for url, category in urls_and_categories:
     except requests.RequestException as e:
         print(f"Errore durante la richiesta di URL {url}: {e}")
 
-# Scrivi i risultati nei file corrispondenti
 for category, result in results_by_category.items():
     with open(f"{category}.txt", "w", encoding="utf-8") as f:
         f.write("\n".join(result))
