@@ -2,6 +2,7 @@
 
 import requests
 
+
 urls_and_categories = [
     ("https://raw.githubusercontent.com/DandelionSprout/adfilt/master/Alternate%20versions%20Anti-Malware%20List/AntiMalwareHosts.txt", "malicious"),
     ("https://osint.digitalside.it/Threat-Intel/lists/latestdomains.txt", "malicious"),
@@ -54,6 +55,7 @@ for url, category in urls_and_categories:
                 results_by_category[category].add(line)
     except requests.RequestException as e:
         print(f"Errore durante la richiesta di URL {url}: {e}")
+
 
 for category, result in results_by_category.items():
     with open(f"{category}.txt", "w", encoding="utf-8") as f:
